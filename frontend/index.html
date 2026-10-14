@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería de Imágenes - Laboratorio S3</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #f4f6f9; }
+    .upload-section { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+    .card { background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: center; }
+    .card img { max-width: 100%; height: 150px; object-fit: cover; border-radius: 4px; }
+    .btn-delete { background: #ff4d4d; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; margin-top: 10px; }
+    .btn-delete:hover { background: #cc0000; }
+  </style>
+</head>
+<body>
+  <h1>📸 Mi Galería en la Nube (Amazon S3)</h1>
+  
+  <div class="upload-section">
+    <h3>Subir nueva imagen</h3>
+    <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp">
+    <button id="uploadBtn" style="padding: 6px 12px; cursor:pointer;">Subir a S3</button>
+    <p id="status" style="margin-top: 10px; font-weight: bold; color: #555;"></p>
+  </div>
+
+  <h2>Galería de Fotos</h2>
+  <div class="gallery" id="galleryContainer"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
